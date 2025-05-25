@@ -1,0 +1,17 @@
+### Register a new user
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "12345"
+}
+
+### Login user
+POST localhost:3001/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "12345"
+}

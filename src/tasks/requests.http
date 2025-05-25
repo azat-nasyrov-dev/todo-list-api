@@ -1,0 +1,35 @@
+### Get all tasks (no token, should fail)
+GET http://localhost:3001/tasks
+Authorization: Bearer
+
+### Get all tasks with token
+GET http://localhost:3001/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZjA2MzViMy05OGE1LTQzODYtYjk0NC05N2UxMmJiOTRiYmYiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE3NDgxNDgxODYsImV4cCI6MTc0ODE1MTc4Nn0.e-obRT0e7-jxjSZ4_FhlHlqQmBsGFwuIhLhsUP77jD8
+
+### Create a task
+POST http://localhost:3001/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZjA2MzViMy05OGE1LTQzODYtYjk0NC05N2UxMmJiOTRiYmYiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE3NDgxNDgxODYsImV4cCI6MTc0ODE1MTc4Nn0.e-obRT0e7-jxjSZ4_FhlHlqQmBsGFwuIhLhsUP77jD8
+
+{
+  "title": "Some title",
+  "description": "Some description"
+}
+
+### Get task by ID
+GET http://localhost:3001/tasks/7968d828-120c-45ad-a923-f4eaa53adeee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZjA2MzViMy05OGE1LTQzODYtYjk0NC05N2UxMmJiOTRiYmYiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE3NDgxNDgxODYsImV4cCI6MTc0ODE1MTc4Nn0.e-obRT0e7-jxjSZ4_FhlHlqQmBsGFwuIhLhsUP77jD8
+
+### Update a task by ID
+PUT http://localhost:3001/tasks/7968d828-120c-45ad-a923-f4eaa53adeee
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZjA2MzViMy05OGE1LTQzODYtYjk0NC05N2UxMmJiOTRiYmYiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE3NDgxNDgxODYsImV4cCI6MTc0ODE1MTc4Nn0.e-obRT0e7-jxjSZ4_FhlHlqQmBsGFwuIhLhsUP77jD8
+
+{
+  "status": "in_progress",
+  "description": "Halfway done"
+}
+
+### Delete a task
+DELETE http://localhost:3001/tasks/eefbaa37-faa3-4765-a5b6-d8d719bfb4a3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZjA2MzViMy05OGE1LTQzODYtYjk0NC05N2UxMmJiOTRiYmYiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE3NDgxNDgxODYsImV4cCI6MTc0ODE1MTc4Nn0.e-obRT0e7-jxjSZ4_FhlHlqQmBsGFwuIhLhsUP77jD8
