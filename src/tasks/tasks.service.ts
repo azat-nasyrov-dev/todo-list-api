@@ -127,6 +127,7 @@ export class TasksService {
       this.logger.log(`Task deleted: ${id}`);
       return { message: 'Task deleted successfully' };
     } catch (err: unknown) {
+      if (err instanceof HttpException) throw err;
       this.logger.error(`Task deletion failed: ${id}`, (err as Error).stack);
       throw new HttpException(TaskMessages.DELETE_ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
     }
